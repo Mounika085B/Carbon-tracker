@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #f0f9ff, #e0f7fa);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    padding: 50px 20px;
+}
+
+h1 {
+    margin-bottom: 50px;
+    color: #333;
+    animation: fadeInDown 1s ease forwards;
+}
+
+/* Options container */
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* Each option item */
+.option-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    animation: floatUp 1.2s ease forwards;
+    transition: transform 0.3s;
+}
+
+/* Circle styling */
+.circle {
+    width: 120px;
+    height: 120px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.circle:hover {
+    transform: scale(1.15) rotate(-5deg);
+    background-color: #45a049;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Option label */
+.option-item p {
+    margin-top: 12px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+    animation: fadeIn 1.5s ease forwards;
+}
+
+/* Animations */
+@keyframes floatUp {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    0% { transform: translateY(-50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Optional: small bounce effect on hover */
+.circle:active {
+    transform: scale(1.05) rotate(2deg);
+}

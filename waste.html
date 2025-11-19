@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste Generation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Waste Generation Tracker</h1>
+        <p>Enter total waste produced per day (kg):</p>
+        <input type="number" id="waste" placeholder="Waste in kg/day">
+        <button id="calculate">Calculate</button>
+        <p id="result"></p>
+        <button onclick="window.location.href='info.html'">Back</button>
+    </div>
+
+    <script>
+        document.getElementById('calculate').addEventListener('click', () => {
+            const waste = Number(document.getElementById('waste').value);
+            const carbon = waste * 0.5; // Example: 0.5 kg CO₂ per kg of waste
+            document.getElementById('result').textContent = `Estimated Carbon: ${carbon.toFixed(2)} kg CO₂/day`;
+        });
+    </script>
+</body>
+</html>

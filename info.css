@@ -1,89 +1,161 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background: linear-gradient(135deg, #f0f9ff, #e0f7fa);
+/* Reset */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
 }
 
-.container {
-    padding: 50px 20px;
-}
-
-h1 {
-    margin-bottom: 50px;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f8;
     color: #333;
-    animation: fadeInDown 1s ease forwards;
+    overflow-x: hidden;
+    animation: fadeIn 1s ease;
 }
 
-/* Options container */
+/* Page fade-in */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 30px 40px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: containerFade 1s ease forwards;
+}
+
+@keyframes containerFade {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Header */
+h1 {
+    font-size: 28px;
+    color: #1f6f8b;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Options grid */
 .options {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
+    justify-content: space-between;
+    gap: 20px;
 }
 
-/* Each option item */
+/* Individual option cards */
 .option-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: #f9fafb;
+    flex: 1 1 140px;
+    max-width: 150px;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
-    animation: floatUp 1.2s ease forwards;
-    transition: transform 0.3s;
+    animation: cardFade 0.8s ease forwards;
 }
 
-/* Circle styling */
+/* Stagger animation delay for cards */
+.option-item:nth-child(1) { animation-delay: 0.1s; }
+.option-item:nth-child(2) { animation-delay: 0.2s; }
+.option-item:nth-child(3) { animation-delay: 0.3s; }
+.option-item:nth-child(4) { animation-delay: 0.4s; }
+.option-item:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes cardFade {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hover lift and scale effect */
+.option-item:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+}
+
+/* Circle style */
 .circle {
-    width: 120px;
-    height: 120px;
-    background-color: #4CAF50;
-    color: white;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
+    background-color: #1f6f8b;
+    color: white;
+    font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    font-weight: bold;
-    font-size: 24px;
-    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    margin: 0 auto 12px;
+    font-size: 20px;
+    transition: transform 0.3s, background-color 0.3s;
 }
 
-.circle:hover {
-    transform: scale(1.15) rotate(-5deg);
-    background-color: #45a049;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+/* Circle hover animation */
+.option-item:hover .circle {
+    transform: scale(1.2);
 }
 
-/* Option label */
+/* Colored circles for Waste and Water */
+.circle-waste {
+    background-color: #FFA500;
+}
+
+.circle-water {
+    background-color: #1E90FF;
+}
+
+/* Option text */
 .option-item p {
-    margin-top: 12px;
-    font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: 500;
     color: #333;
-    animation: fadeIn 1.5s ease forwards;
 }
 
-/* Animations */
-@keyframes floatUp {
-    0% { transform: translateY(50px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
+/* Links */
+.option-link {
+    text-decoration: none;
+    color: inherit;
 }
 
-@keyframes fadeInDown {
-    0% { transform: translateY(-50px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
+/* Back to Home button */
+.back-home {
+    margin-top: 40px;
+    opacity: 0;
+    animation: buttonFade 1s 0.7s forwards;
 }
 
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+@keyframes buttonFade {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* Optional: small bounce effect on hover */
-.circle:active {
-    transform: scale(1.05) rotate(2deg);
+.back-home button {
+    padding: 12px 25px;
+    background-color: #1f6f8b;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.back-home button:hover {
+    background-color: #155a70;
+    transform: scale(1.05);
 }

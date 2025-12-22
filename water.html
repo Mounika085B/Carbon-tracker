@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Carbon Footprint</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Water Carbon Footprint</h2>
+
+        <p>
+            Water carbon footprint is the CO₂ emissions associated with water consumption, including pumping, treatment, and heating.
+        </p>
+
+        <label>Water Used (liters):</label>
+        <input type="number" id="water" placeholder="Enter water usage in liters">
+
+        <button onclick="calculateWater()">Calculate</button>
+
+        <h3 id="result"></h3>
+
+        <p style="text-align:center;">
+            <a href="info.html">⬅ Back to Info Page</a>
+        </p>
+    </div>
+
+    <script src="water.js"></script>
+</body>
+</html>

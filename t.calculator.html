@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transportation Carbon Calculator</title>
+    <link rel="stylesheet" href="transportation.html">
+</head>
+<body>
+
+<div class="container">
+    <h2>Transportation Carbon Footprint Calculator</h2>
+
+    <label>Distance Travelled (in km):</label>
+    <input type="number" id="distance" placeholder="Enter distance">
+
+    <label>Mode of Transport:</label>
+    <select id="transport">
+        <option value="0.15">Car (Petrol)</option>
+        <option value="0.18">Car (Diesel)</option>
+        <option value="0.05">Bus</option>
+        <option value="0.02">Train</option>
+        <option value="0.09">Motorcycle</option>
+        <option value="0.20">Airplane</option>
+    </select>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <h3 id="result"></h3>
+
+    <p class="link">
+        <a href="transportation.html">Transportation Info</a>
+    </p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
